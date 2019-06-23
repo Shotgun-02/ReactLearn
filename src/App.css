@@ -1,0 +1,30 @@
+.mainDiv{
+  padding: 20px;
+    border: 1px solid green;
+    width: 350px;
+    box-shadow: 3px 3px 7px 1px grey;
+    margin: 25px;
+}
+
+.mtxtbox{
+  font-size: 18px;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn{
+  padding: 5px;
+  background: gainsboro;
+  border: 1px solid gray;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+li{
+  margin: 2px 0;
+  display: block;
+}
+.lidone{
+  text-decoration: line-through;
+}
