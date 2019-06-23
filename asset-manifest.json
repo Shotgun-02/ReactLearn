@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactLearn/static/css/main.84c3dea6.chunk.css",
+    "main.js": "/ReactLearn/static/js/main.16f28e0e.chunk.js",
+    "main.js.map": "/ReactLearn/static/js/main.16f28e0e.chunk.js.map",
+    "runtime~main.js": "/ReactLearn/static/js/runtime~main.f0db4aec.js",
+    "runtime~main.js.map": "/ReactLearn/static/js/runtime~main.f0db4aec.js.map",
+    "static/js/2.d6a534e5.chunk.js": "/ReactLearn/static/js/2.d6a534e5.chunk.js",
+    "static/js/2.d6a534e5.chunk.js.map": "/ReactLearn/static/js/2.d6a534e5.chunk.js.map",
+    "index.html": "/ReactLearn/index.html",
+    "precache-manifest.21f5235bed94ff465e35d99809dfe484.js": "/ReactLearn/precache-manifest.21f5235bed94ff465e35d99809dfe484.js",
+    "service-worker.js": "/ReactLearn/service-worker.js",
+    "static/css/main.84c3dea6.chunk.css.map": "/ReactLearn/static/css/main.84c3dea6.chunk.css.map"
+  }
+}
