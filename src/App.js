@@ -3,50 +3,71 @@ import './App.css';
 import TodoComp from './TodoComp';
 
 class App extends Component {
-  state = {
-    lst: [],
-    newVal: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      text: ''
+    };
+  }
 
   txtChange = e => {
-    let { newVal } = this.state;
-    newVal = e.target.value;
-    this.setState({ newVal });
+    this.setState({ text: e.target.value });
   };
 
   btnSubmit = e => {
-    let { lst, newVal } = this.state;
-    if (newVal === "") { return };
-    lst.push(newVal);
-    // console.log(lst);
-    // console.log(newVal);
-    newVal = '';
-    this.setState({ lst, newVal });
+    let { text } = this.state;
+    let items = [...this.state.items];
+    if (text === "") { console.log('no data');}
+    else if((items.filter((elm)=>{return elm.val.toLowerCase() === text.toLowerCase()})).length>0){
+      alert('data exists');
+    }
+    else{
+    items.push({id:(items.length+1),val:text,done:false});
+    this.setState({ items, text:"" });
+    }
+    e.preventDefault();
   };
 
-  btnRemove=indx=>{
-    let { lst} = this.state;
-    lst.splice(indx,1);
-    this.setState({lst});
+  btnDone = (e,indx) => {
+    let items = [...this.state.items];
+    items.forEach(elm => {
+      if(elm.id === indx){
+        elm.done = true;
+      }
+    });
+    this.setState({items});
+    e.preventDefault();
+  };
+  
+  btnDelete = (e,indx) => {
+    let items = [...this.state.items];
+    items = items.filter((elm)=>{return elm.id !== indx});
+    //items.splice(indx, 1);
+    this.setState({ items });
+    e.preventDefault();
   };
 
   render() {
-    let { lst, newVal } = this.state;
+    let { items, text } = this.state;
     return (
-      <div className="mainDiv">
-        <input className="mtxtbox" type="text" value={newVal} onChange={this.txtChange} /> &nbsp;&nbsp; <button className="btn" onClick={this.btnSubmit}>Submit</button><br />
+      <form className="mainDiv">
+        <h3>To Do List</h3>
         <ul>
-          {lst.map((val, indx) => (
+          {items.map((elem, indx) => (
             <TodoComp
               key={indx}
-              val={val}
-              indx={indx}
-              onRem={this.btnRemove}
-
+              item={elem}
+              indx={elem.id}
+              onDel={this.btnDelete}
+              onDone={this.btnDone}
             />
           ))}
         </ul>
-      </div>
+        <input className="mtxtbox" type="text" value={text} onChange={this.txtChange} />
+        &nbsp;&nbsp;
+        <button className="btn submit" onClick={this.btnSubmit}>Submit</button><br />
+      </form>
     );
   };
 }

@@ -1,21 +1,21 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-class TodoComp extends PureComponent {
-    state = {
-        lstcls: ''
-    };
-    onRemove = e => this.props.onRem(this.props.indx);
-    onDone = e => {
-        let { lstcls } = this.state;
-        lstcls = (lstcls === "") ? 'lidone' : '';
-        this.setState({ lstcls });
-    };
+class TodoComp extends Component {
+    onDelete = e => this.props.onDel(e,this.props.indx);
+    onDone =e=>this.props.onDone(e,this.props.indx);
     render() {
-        let { val } = this.props;
-        let { lstcls } = this.state;
-        return (
-            <li className={lstcls}>
-                <span>{val}</span><button className="btn" onClick={this.onRemove}>X</button><button onClick={this.onDone} className="btn" >{(lstcls === "") ? 'Done' : 'UnDone'}</button>
+        let{ item} = this.props;
+        return (           
+            // <li className={(item.done === true)?'lidone':''}>
+            //     {(item.done === false)?<button onClick={this.onDone} className="btn green" >&#x2713;</button>:null}
+            //     <button className="btn red" onClick={this.onDelete}>x</button> &nbsp;
+            //     <span>{item.val}</span>                
+            // </li>
+
+            <li className={(item.done === true)?'lidone':''}>
+                {(item.done === false)?<input type="button"  onClick={this.onDone} className="btn green" value="&#x2713;"/>:null}
+                <input type="button" className="btn red" onClick={this.onDelete} value="x"/> &nbsp;
+                <span>{item.val}</span>                
             </li>
         );
     };

@@ -11,20 +11,49 @@
     border: 1px solid lightblue;
     border-radius: 5px;
     padding: 5px;
+    box-shadow: 1px 1px 4px 1px lightgrey;
 }
 
-.btn{
+/*.btn{
   padding: 5px;
   background: gainsboro;
   border: 1px solid gray;
   font-size: 15px;
   margin-left: 5px;
+}*/
+
+.btn{
+  background: transparent;
+    font-size: 20px;
+    border-radius: 0px;
+    border: 0;
+    border-right: 1px solid #80808069;
+    padding: 0 7px;
+    cursor: pointer;
 }
 
+.green{color: green;}
+
+.red{color: red;}
+
+.submit{
+  border: 1px solid #80808069;
+  padding: 5px;
+  background: lightgray;
+  box-shadow: 1px 1px 4px 1px lightgrey;
+}
+h3{text-decoration: underline;}
+ul{padding-left: 0;}
 li{
-  margin: 2px 0;
+  /*margin: 2px 0;*/
   display: block;
+  border: 1px solid lightblue;
+    width: 310px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #bbb;
+    margin: 5px 3px;
 }
 .lidone{
   text-decoration: line-through;
+  background: lightgreen;
 }
